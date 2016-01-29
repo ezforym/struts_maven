@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="User">
+	<select id="selectUserByUser" resultClass="com.wyz.pojo.User">
+	<![CDATA[
+		select * from
+		user where  address=#address#
+	]]>
+		<!-- <dynamic> <isNotEmpty property="id" prepend="and"> <![CDATA[ id = 
+			#id# ]]> </isNotEmpty> <isNotEmpty property="name" prepend="and"> <![CDATA[ 
+			name = #name# ]]> </isNotEmpty> <isNotEmpty property="phone" prepend="and"> 
+			<![CDATA[ phone = #phone# ]]> </isNotEmpty> <isNotEmpty property="password" 
+			prepend="and"> <![CDATA[ password = #password# ]]> </isNotEmpty> <isNotEmpty 
+			property="age" prepend="and"> <![CDATA[ age = #age# ]]> </isNotEmpty> </dynamic> -->
+	</select>
+</sqlMap>

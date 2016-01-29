@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<package name="jsonManager" extends="json-default">
+		<!-- 返回结果类型为 json -->
+		<action name="userJson" class="com.jsontostruts2.action.UserAction">
+			<result type="json" />
+		</action>
+		<!-- 该action在返回列表时添加进来的 -->
+		<action name="jsonlist" class="com.jsontostruts2.action.UserListAction">
+			<result type="json" />
+		</action>
+	</package>
+	<package name="default" extends="struts-default">
+		<action name="auth" class="com.wyz.action.AuthAction"
+			method="auth">
+		</action>
+	</package>
+</struts>
