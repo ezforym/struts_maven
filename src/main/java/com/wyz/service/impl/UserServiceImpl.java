@@ -9,6 +9,15 @@ import com.wyz.service.IUserService;
 
 public class UserServiceImpl implements IUserService {
 	private static IUserDao userDao;
+	private static String some;
+
+	public static void setSome(String some) {
+		UserServiceImpl.some = some;
+	}
+
+	public static String getSome() {
+		return some;
+	}
 
 	static {
 		userDao = new UserDaoImpl();

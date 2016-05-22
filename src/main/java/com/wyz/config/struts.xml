@@ -16,8 +16,10 @@
 		</action>
 	</package>
 	<package name="default" extends="struts-default">
-		<action name="auth" class="com.wyz.action.AuthAction"
-			method="auth">
+		<action name="auth" class="com.wyz.action.AuthAction" method="auth">
+		</action>
+		<action name="session" class="com.wyz.action.AuthAction"
+			method="session">
 		</action>
 	</package>
 </struts>
