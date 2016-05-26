@@ -9,23 +9,14 @@ import com.wyz.service.IUserService;
 
 public class UserServiceImpl implements IUserService {
 	private static IUserDao userDao;
-	private static String some;
-
-	public static void setSome(String some) {
-		UserServiceImpl.some = some;
-	}
-
-	public static String getSome() {
-		return some;
-	}
 
 	static {
 		userDao = new UserDaoImpl();
 	}
 
-	public int add(User t) {
+	public boolean save(User t) {
 		// TODO Auto-generated method stub
-		return 0;
+		return false;
 	}
 
 	public int delete(long id) {

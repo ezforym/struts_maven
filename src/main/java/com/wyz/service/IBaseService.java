@@ -3,7 +3,7 @@ package com.wyz.service;
 import java.util.List;
 
 public interface IBaseService<T> {
-	int add(T t);
+	boolean save(T t);
 
 	int delete(long id);
 

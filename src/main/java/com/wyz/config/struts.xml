@@ -21,5 +21,12 @@
 		<action name="session" class="com.wyz.action.AuthAction"
 			method="session">
 		</action>
+		<action name="ip" class="com.wyz.action.ShopAction" method="insertShop">
+		</action>
+		<action name="shop" class="com.wyz.action.ShopAction" method="getShopById">
+		</action>
+		<action name="listshop" class="com.wyz.action.ShopAction"
+			method="getListShopById">
+		</action>
 	</package>
 </struts>

@@ -32,7 +32,7 @@ public interface IBaseDao<T> {
 	 * @param id
 	 * @return
 	 */
-	T get(long id);
+	T find(long id);
 
 	/**
 	 * 查询数据条数

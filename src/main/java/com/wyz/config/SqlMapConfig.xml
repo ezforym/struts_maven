@@ -20,4 +20,5 @@
 	<!-- List the SQL Map XML files. They can be loaded from the classpath, 
 		as they are here (com.scujcc.model...) -->
 	<sqlMap resource="com/wyz/pojo/User.xml" />
+	<sqlMap resource="com/wyz/pojo/Shop.xml" />
 </sqlMapConfig>

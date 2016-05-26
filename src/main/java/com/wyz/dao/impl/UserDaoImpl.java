@@ -45,7 +45,7 @@ public class UserDaoImpl implements IUserDao {
           }
           
           @Override
-          public User get(long id) {
+          public User find(long id) {
                     // TODO Auto-generated method stub
                     return null;
           }

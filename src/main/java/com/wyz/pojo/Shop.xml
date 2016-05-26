@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Shop">
+	<insert id="insertShop" parameterClass="com.wyz.pojo.Shop">
+		<![CDATA[
+		insert into shop(id,address, name, pid, dr,money)
+		values(#id#,#address#,
+		#name#, #pid#, #dr#,#money#)]]>
+		<selectKey resultClass="long" keyProperty="id">
+         <![CDATA[SELECT LAST_INSERT_ID() AS ID ]]>
+		</selectKey>
+	</insert>
+</sqlMap>
