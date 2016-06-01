@@ -43,9 +43,9 @@ public class AuthAction extends ActionSupport implements SessionAware {
 		HttpServletResponse response = ServletActionContext.getResponse();
 		User user = new User();
 		user.setAddress("1");
-		List<User> list = userService.selectUserByUser(user);
-		session.put("user", list.get(0));
-		ToJson.getJson(list, "user", response);
+		// List<User> list = userService.selectUserByUser(user);
+		session.put("user", user);
+		ToJson.getJson(user, "user", response);
 	}
 
 	// 查询所有的Task

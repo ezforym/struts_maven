@@ -16,6 +16,21 @@
 		</action>
 	</package>
 	<package name="default" extends="struts-default">
+		<interceptors>
+			<interceptor name="login" class="com.wyz.filter.isLogin" />
+			<!-- 自定义拦截器堆栈 -->
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="login" />
+				<!-- 引用默认的拦截器堆栈 如果不用defaultStack，则表单值将会被页面跳转后返回 -->
+			</interceptor-stack>
+		</interceptors>
+		<!-- 重定义默认拦截器堆栈 -->
+		<default-interceptor-ref name="myStack" />
+		<global-results>
+			<result name="login" type="redirect">/error.jsp</result>
+		</global-results>
+
 		<action name="auth" class="com.wyz.action.AuthAction" method="auth">
 		</action>
 		<action name="session" class="com.wyz.action.AuthAction"
