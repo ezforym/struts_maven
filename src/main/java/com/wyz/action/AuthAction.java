@@ -17,6 +17,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.wyz.pojo.User;
 import com.wyz.service.IUserService;
 import com.wyz.service.impl.UserServiceImpl;
+import com.wyz.util.RedisClient;
 import com.wyz.util.ToJson;
 
 /**
@@ -46,6 +47,7 @@ public class AuthAction extends ActionSupport implements SessionAware {
 		List<User> list = userService.selectUserByUser(user);
 		System.out.println(list.size());
 		session.put("user", user);
+		RedisClient.getInstance().set("user", user);
 		ToJson.getJson(user, "user", response);
 	}
 
