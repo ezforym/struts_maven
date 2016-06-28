@@ -51,6 +51,9 @@ public class ShopAction extends ActionSupport implements SessionAware {
 		s.setAddress("重庆");
 		s.setName("ym");
 		s.setPid(2L);
+		session.put("shop", s);
+		shopService.save(s);
+		shopMongoService.inSert(s);
 		ToJson.getJson(s, "data", response);
 		// shopMongoService.inSert(s);
 		// boolean rs = shopService.save(s);

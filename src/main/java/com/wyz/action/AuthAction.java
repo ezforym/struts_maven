@@ -43,7 +43,8 @@ public class AuthAction extends ActionSupport implements SessionAware {
 		HttpServletResponse response = ServletActionContext.getResponse();
 		User user = new User();
 		user.setAddress("1");
-		// List<User> list = userService.selectUserByUser(user);
+		List<User> list = userService.selectUserByUser(user);
+		System.out.println(list.size());
 		session.put("user", user);
 		ToJson.getJson(user, "user", response);
 	}
